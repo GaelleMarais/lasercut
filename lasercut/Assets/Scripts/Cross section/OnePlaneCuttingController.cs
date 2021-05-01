@@ -7,14 +7,16 @@ public class OnePlaneCuttingController : MonoBehaviour {
     Material mat;
     public Vector3 normal;
     public Vector3 position;
+    public bool inversedZAxis = false;
     private List<Renderer> rendererList = new List<Renderer>();
+    private int Zaxe;
 
     void Start () {
 
         foreach (Renderer objectRenderer in GetComponentsInChildren<Renderer>())        
             rendererList.Add(objectRenderer);
-        
-        normal = plane.transform.TransformVector(new Vector3(0,0,-1));
+        Zaxe = inversedZAxis ? 1 : -1;
+        normal = plane.transform.TransformVector(new Vector3(0,0, Zaxe));
         position = plane.transform.position;
         UpdateShaderProperties();
     }
@@ -25,7 +27,7 @@ public class OnePlaneCuttingController : MonoBehaviour {
 
     private void UpdateShaderProperties()
     {
-        normal = plane.transform.TransformVector(new Vector3(0, 0, -1));
+        normal = plane.transform.TransformVector(new Vector3(0, 0, Zaxe));
         position = plane.transform.position;
 
         foreach (Renderer rend in rendererList)
