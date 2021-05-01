@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public GameObject scene;
+    public float sensitivity = 0.4f;
+
+
     void Update()
     {
         MouseInput();
@@ -11,10 +15,10 @@ public class CameraController : MonoBehaviour
 
     void MouseInput()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") != 0)
-        {
+        if (Input.GetMouseButton(1))        
+            MouseRightClick();
+        else if (Input.GetAxis("Mouse ScrollWheel") != 0)
             MouseWheeling();
-        }
     }
 
     void MouseWheeling()
@@ -30,5 +34,11 @@ public class CameraController : MonoBehaviour
             pos = pos + transform.forward;
             transform.position = pos;
         }
+    }
+
+    void MouseRightClick()
+    {
+        float rotateVertical = Input.GetAxis("Mouse Y");      
+        transform.RotateAround(Vector3.zero, transform.right, rotateVertical * sensitivity);
     }
 }

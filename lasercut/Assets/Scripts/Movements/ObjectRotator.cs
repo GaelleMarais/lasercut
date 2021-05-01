@@ -4,7 +4,7 @@ using System.Collections;
 public class ObjectRotator : MonoBehaviour
 {
 
-    public float sensitivity;
+    public float sensitivity = 0.4f;
     private Vector3 _mouseReference;
     private Vector3 _mouseOffset;
     private Vector3 _rotation;
@@ -12,7 +12,6 @@ public class ObjectRotator : MonoBehaviour
 
     void Start()
     {
-        sensitivity = 0.4f;
         _rotation = Vector3.zero;
     }
 
