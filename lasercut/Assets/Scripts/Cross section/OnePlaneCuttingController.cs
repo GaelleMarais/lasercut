@@ -30,8 +30,11 @@ public class OnePlaneCuttingController : MonoBehaviour {
 
         foreach (Renderer rend in rendererList)
         {
-            rend.material.SetVector("_PlaneNormal", normal);
-            rend.material.SetVector("_PlanePosition", position);
+            foreach (Material m in rend.materials)
+            {
+                m.SetVector("_PlaneNormal", normal);
+                m.SetVector("_PlanePosition", position);
+            }
         }
     }
 }
