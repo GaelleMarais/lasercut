@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6695729983188976390}
   - component: {fileID: 7729260413076262051}
   - component: {fileID: 5523434239270762601}
-  - component: {fileID: 1589890377472370274}
   m_Layer: 0
   m_Name: treeCrooked
   m_TagString: Untagged
@@ -83,19 +82,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1589890377472370274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6316248300045015484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c677c933585d0ee4dbfe7483ac9f8c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plane: {fileID: 0}
-  normal: {x: 0, y: 0, z: 0}
-  position: {x: 0, y: 0, z: 0}
-  rend: {fileID: 5523434239270762601}
