@@ -347,7 +347,6 @@ MonoBehaviour:
   plane: {fileID: 1012650134}
   normal: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
-  rend: {fileID: 351670794}
 --- !u!1 &1012650134
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,11 +559,15 @@ PrefabInstance:
     - target: {fileID: 1589890377472370274, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
       propertyPath: rend
       value: 
-      objectReference: {fileID: 6509342115019166662}
+      objectReference: {fileID: 0}
     - target: {fileID: 1589890377472370274, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
       propertyPath: plane
       value: 
       objectReference: {fileID: 1012650134}
+    - target: {fileID: 1589890377472370274, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5523434239270762601, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -617,15 +620,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1589890377472370274, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
 --- !u!4 &5340979946962217129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6695729983188976390, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
-  m_PrefabInstance: {fileID: 1653658923263306671}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &6509342115019166662 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5523434239270762601, guid: eba81a46fe541764c8f70f210e2abbbd, type: 3}
   m_PrefabInstance: {fileID: 1653658923263306671}
   m_PrefabAsset: {fileID: 0}

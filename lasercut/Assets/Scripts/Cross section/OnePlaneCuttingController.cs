@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
-//[ExecuteInEditMode]
+using System.Collections.Generic;
+
 public class OnePlaneCuttingController : MonoBehaviour {
 
     public GameObject plane;
     Material mat;
     public Vector3 normal;
     public Vector3 position;
-    public Renderer rend;
-    // Use this for initialization
+    private List<Renderer> rendererList = new List<Renderer>();
+
     void Start () {
-        rend = GetComponent<Renderer>();
+
+        foreach (Renderer objectRenderer in GetComponentsInChildren<Renderer>())        
+            rendererList.Add(objectRenderer);
+        
         normal = plane.transform.TransformVector(new Vector3(0,0,-1));
         position = plane.transform.position;
         UpdateShaderProperties();
@@ -24,7 +27,11 @@ public class OnePlaneCuttingController : MonoBehaviour {
     {
         normal = plane.transform.TransformVector(new Vector3(0, 0, -1));
         position = plane.transform.position;
-        rend.material.SetVector("_PlaneNormal", normal);
-        rend.material.SetVector("_PlanePosition", position);
+
+        foreach (Renderer rend in rendererList)
+        {
+            rend.material.SetVector("_PlaneNormal", normal);
+            rend.material.SetVector("_PlanePosition", position);
+        }
     }
 }
